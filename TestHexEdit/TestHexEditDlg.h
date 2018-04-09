@@ -36,4 +36,5 @@ public:
 	afx_msg void OnBnClickedButtonOpenfile();
 	CEdit m_editFileName;
 	CEdit m_editFileSize;
+	CString m_strBasicInfo;
 };

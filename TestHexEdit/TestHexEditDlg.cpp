@@ -10,6 +10,7 @@
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
+#include "FlvFormat.h"
 
 
 // CAboutDlg dialog used for App About
@@ -50,6 +51,7 @@ END_MESSAGE_MAP()
 
 CTestHexEditDlg::CTestHexEditDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(CTestHexEditDlg::IDD, pParent)
+	, m_strBasicInfo(_T(""))
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -60,6 +62,7 @@ void CTestHexEditDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_CUSTOM1, m_wndHexEdit);
 	DDX_Control(pDX, IDC_EDIT_FILE_NAME, m_editFileName);
 	DDX_Control(pDX, IDC_EDIT_FILE_SIZE, m_editFileSize);
+	DDX_Text(pDX, IDC_BASIC_INFO, m_strBasicInfo);
 }
 
 BEGIN_MESSAGE_MAP(CTestHexEditDlg, CDialogEx)
@@ -189,9 +192,12 @@ void CTestHexEditDlg::OnBnClickedButtonOpenfile()
 		AfxMessageBox(szNoMem);
 	}
 
+	CString fileName;  
+
+	FILE *pFile;
 	if (dlg.DoModal() == IDOK) 
 	{
-		CString fileName;  
+		
 		fileName = dlg.GetPathName();  
 		m_editFileName.SetWindowText(fileName); 
 
@@ -199,7 +205,6 @@ void CTestHexEditDlg::OnBnClickedButtonOpenfile()
 		strFileSize.Format(_T("%d"), fileName.GetLength());
 		m_editFileSize.SetWindowText(strFileSize);
 
-		FILE *pFile;
 		pFile = _tfopen(fileName,_T("rb"));//fopen((const char*)fileName.GetBuffer(), "rb");
 		if (pFile != NULL)
 		{
@@ -208,5 +213,12 @@ void CTestHexEditDlg::OnBnClickedButtonOpenfile()
 
 			m_wndHexEdit.SetData(ret, (BYTE*)testArray);
 		}
+
+		//go to analyze the file to get basic infomation
+		FlvFormat *pFlvFormat = new FlvFormat(fileName);
+		CString strRtn = pFlvFormat->getBasicFormatInfo();
+
+		m_strBasicInfo = strRtn;
+		UpdateData(FALSE);
 	}
 }
