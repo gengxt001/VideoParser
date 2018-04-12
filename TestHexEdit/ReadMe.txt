@@ -1,47 +1,47 @@
 ================================================================================
-    MICROSOFT FOUNDATION CLASS LIBRARY : TestHexEdit Project Overview
+    MICROSOFT FOUNDATION CLASS LIBRARY : VideoParser Project Overview
 ===============================================================================
 
-The application wizard has created this TestHexEdit application for
+The application wizard has created this VideoParser application for
 you.  This application not only demonstrates the basics of using the Microsoft
 Foundation Classes but is also a starting point for writing your application.
 
 This file contains a summary of what you will find in each of the files that
-make up your TestHexEdit application.
+make up your VideoParser application.
 
-TestHexEdit.vcxproj
+VideoParser.vcxproj
     This is the main project file for VC++ projects generated using an application wizard.
     It contains information about the version of Visual C++ that generated the file, and
     information about the platforms, configurations, and project features selected with the
     application wizard.
 
-TestHexEdit.vcxproj.filters
+VideoParser.vcxproj.filters
     This is the filters file for VC++ projects generated using an Application Wizard. 
     It contains information about the association between the files in your project 
     and the filters. This association is used in the IDE to show grouping of files with
     similar extensions under a specific node (for e.g. ".cpp" files are associated with the
     "Source Files" filter).
 
-TestHexEdit.h
+VideoParser.h
     This is the main header file for the application.  It includes other
     project specific headers (including Resource.h) and declares the
-    CTestHexEditApp application class.
+    CVideoParserApp application class.
 
-TestHexEdit.cpp
+VideoParser.cpp
     This is the main application source file that contains the application
-    class CTestHexEditApp.
+    class CVideoParserApp.
 
-TestHexEdit.rc
+VideoParser.rc
     This is a listing of all of the Microsoft Windows resources that the
     program uses.  It includes the icons, bitmaps, and cursors that are stored
     in the RES subdirectory.  This file can be directly edited in Microsoft
     Visual C++. Your project resources are in 1033.
 
-res\TestHexEdit.ico
+res\VideoParser.ico
     This is an icon file, which is used as the application's icon.  This
-    icon is included by the main resource file TestHexEdit.rc.
+    icon is included by the main resource file VideoParser.rc.
 
-res\TestHexEdit.rc2
+res\VideoParser.rc2
     This file contains resources that are not edited by Microsoft
     Visual C++. You should place all resources not editable by
     the resource editor in this file.
@@ -51,10 +51,10 @@ res\TestHexEdit.rc2
 
 The application wizard creates one dialog class:
 
-TestHexEditDlg.h, TestHexEditDlg.cpp - the dialog
-    These files contain your CTestHexEditDlg class.  This class defines
+VideoParserDlg.h, VideoParserDlg.cpp - the dialog
+    These files contain your CVideoParserDlg class.  This class defines
     the behavior of your application's main dialog.  The dialog's template is
-    in TestHexEdit.rc, which can be edited in Microsoft Visual C++.
+    in VideoParser.rc, which can be edited in Microsoft Visual C++.
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -74,13 +74,13 @@ Other standard files:
 
 StdAfx.h, StdAfx.cpp
     These files are used to build a precompiled header (PCH) file
-    named TestHexEdit.pch and a precompiled types file named StdAfx.obj.
+    named VideoParser.pch and a precompiled types file named StdAfx.obj.
 
 Resource.h
     This is the standard header file, which defines new resource IDs.
     Microsoft Visual C++ reads and updates this file.
 
-TestHexEdit.manifest
+VideoParser.manifest
 	Application manifest files are used by Windows XP to describe an applications
 	dependency on specific versions of Side-by-Side assemblies. The loader uses this
 	information to load the appropriate assembly from the assembly cache or private
